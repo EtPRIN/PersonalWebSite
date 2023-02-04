@@ -6,7 +6,7 @@
     color: white;
     font-family: "Poppins",Sans-serif;
 }
-header > h1{
+header > a > p{
     position: absolute;
     top: 0px;
 }
@@ -363,6 +363,19 @@ header > h1{
     content: "</h3>";
 }
 
+/* 6 - CONTACT */
+.corps-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-txt>p{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* responsive no 4 blocks per row */
 @media screen and (max-width: 1600px) {
