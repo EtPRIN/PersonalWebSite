@@ -1,0 +1,415 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    font-family: "Poppins",Sans-serif;
+}
+header > h1{
+    position: absolute;
+    top: 0px;
+}
+
+/* Utility classes */
+.animate--infinite {
+    animation-iteration-count: infinite;
+}
+
+/* Animations */
+@keyframes spin {
+    from{
+        transform: rotatex(45deg) rotateY(45deg) rotateZ(0deg);
+    }
+    to{
+        transform: rotatex(-675deg) rotateY(405deg) rotateZ(0deg);
+    }
+    
+}
+
+@keyframes txt-apparition{
+    from{transform: scale(0);}
+    to{transform: scale(1);}
+}
+@keyframes fade-in{
+    from{
+        transform: translateY(20vh);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    
+}
+@keyframes bounce{
+    0%,
+    50%,
+    100%{
+        transform: translateY(0);
+        color: white;
+    }
+    60%{
+        transform: translateY(-30px);
+        color: white;
+    }
+    70%{
+        transform: translateY(0);
+        color:blueviolet;
+    }
+    80%{
+        transform: translateY(-15px);
+        color: white;
+    }
+    90%{
+        transform: translateY(5px);
+        color:blueviolet;
+    }
+}
+
+@keyframes slideInTop{
+    from{
+        transform: translateY(-150px);
+    }
+
+    to{
+        transform: translateY(0);
+    }
+}
+.slideInTop{
+    animation-name: slideInTop;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+.bounce{
+    animation-name: fade-in,bounce;
+    animation-duration: 1.5s,4s;
+    animation-delay: 0s,1.5s;
+    animation-iteration-count: 1,infinite;
+    animation-timing-function: ease-in-out;
+}
+.txt-apparition{
+    animation-name: txt-apparition;
+    animation-duration: 2s;
+    /*border: 20px white solid;*/
+}
+/*
+#about:hover .about-me{
+    animation-name: slideInTop;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}*/
+
+
+/* SKIP-LINKS */
+
+.navbar{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0px;
+}
+.navlinks{
+    display: flex;
+    flex-direction: row;
+    /*background-color: aqua;*/
+    margin: auto;
+    margin-top: 30px;
+}
+
+.navlinks > li{
+    margin: 20px;
+}
+
+.navlinks > li>a>h2:hover{
+    color: aqua;
+}
+/* SCROLL DEFINITION */
+.scroll-container{
+    overflow: auto;
+    width: 100%;
+    height:100vh;
+    scroll-snap-type: y mandatory;
+}
+.scroll-area{
+    scroll-snap-align: start;
+    width: 100%;
+    min-height: 100vh;
+    height: auto; /*cause probably longer*/
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(25,24,29);
+}
+
+.corps{
+    z-index: 2;
+}
+
+/* 1 - INTRO */
+.intro{
+    background: linear-gradient(rgb(21,31,42), rgb(25,24,29));
+    height: 100vh;
+}
+
+.image-intro{
+    width: 100%;
+    height: 100%;
+    background-image: url("./img/test_render.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column; 
+}
+
+.corps-intro{
+    width: 50%;
+    height: 80%;
+    /*background-color: aqua;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.corps-intro > h1{
+    font-size: 7em;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 3px 11px rgb(0 0 0 / 30%);
+}
+.corps-intro > h2{
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--e-global-typography-accent-font-family),Sans-serif;
+    font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.fleche-bas{
+    position: relative;
+    font-size: 3em;
+    bottom:0%;
+}
+
+/* 2 - ABOUT ME */
+.corps-about{
+    width: 70%;
+    height: 60%;
+    /*background-color: aqua;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me{
+    border: 2px white solid;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.about-me-txt{
+    padding: 50px;
+    padding-right: 0px;
+    width: 50%;
+}
+
+.about-me-img{
+    padding: 0px;
+    width: 50%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* 3 - SKILLS */
+
+.corps-skills{
+    width: 90%;
+    height: 80%;
+    /*background-color: aqua;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-container{
+    display: flex;
+    width: 100%;
+}
+
+.row-of-two{
+    display: flex;
+    width: 100%;
+}
+
+.skill{
+    width: 50%;
+    margin: 20px;
+    padding: 30px;
+    border: 2px solid white;
+}
+
+.skill > h2{
+    margin-bottom: 20px;
+}
+
+.text-skill{
+    padding-left: 15px;
+    border-left: 3px solid gray;
+    margin-left: 15px;
+}
+.soustext-skill-deb{margin-bottom: 10px;}
+.soustext-skill-deb::before{
+    color: gray;
+    content: "<h3>";
+}
+.soustext-skill-fin{margin-top: 10px;}
+.soustext-skill-fin::before{
+    color: gray;
+    content: "</h3>";
+}
+
+/* 4 - EXPERIENCE */
+
+.experiences{
+    min-height: 100vh;
+    height: auto; /*cause probably longer*/
+}
+
+.corps-experience{
+    width: 70%;
+    height: 60%;
+    /*background-color: aqua;*/
+    margin-top: 10vh;
+    margin-bottom: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.defilant-experience{
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    width: 100%;
+    /*background-color: aqua;*/
+}
+
+.experience{
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px;
+    width:400px;
+    margin: auto;
+    margin-top: 20px;
+    transition: 1s;
+}
+
+/* 5 - STUDY */
+
+.corps-study{
+    width: 70%;
+    height: 80%;
+    /*background-color: aqua;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.study-container{
+    width: 100%;
+}
+.masters{
+    display: flex;
+    flex-direction: row;
+}
+.study{
+    width: 50%;
+    margin: 20px;
+    padding: 30px;
+    border: 2px solid white;
+}
+
+.study > h4{
+    margin-bottom: 20px;
+}
+
+.mooc{
+    width: calc(100% - 104px);
+}
+
+.text-skill{
+    padding-left: 15px;
+    border-left: 3px solid gray;
+    margin-left: 15px;
+}
+.soustext-skill-deb{margin-bottom: 10px;}
+.soustext-skill-deb::before{
+    color: gray;
+    content: "<h3>";
+}
+.soustext-skill-fin{margin-top: 10px;}
+.soustext-skill-fin::before{
+    color: gray;
+    content: "</h3>";
+}
+
+
+/* responsive no 4 blocks per row */
+@media screen and (max-width: 1600px) {
+    .skill-container {
+      flex-direction: column;
+    }
+    .skill{
+        width: calc(100% - 104px);
+    }
+    .corps-skills{
+        width: 70%;
+    }
+  }
+/* responsive no 2 blocks per row */
+@media screen and (max-width: 1109px) {
+    /*skills*/
+    .row-of-two{
+        flex-direction: column;
+    }
+    /*study*/
+    .masters {
+      flex-direction: column;
+    }
+    .study{
+        width: calc(100% - 104px);
+    }
+    /*about me*/
+    .about-me-img{
+        display: none;
+    }
+    .about-me-txt{
+        width: 100%;
+        padding-right: 50px;
+    }
+}
+/*Experience too much width*/
+@media screen and (max-width: 1270px) and (min-width: 999px) {
+    .corps-experience{
+        width:100%;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    .corps-experience{
+        width:70%;
+    }
+    .experience{
+        width: 100%;
+    }
+}
